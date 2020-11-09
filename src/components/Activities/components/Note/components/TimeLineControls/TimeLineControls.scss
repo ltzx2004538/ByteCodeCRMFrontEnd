@@ -1,0 +1,12 @@
+@import '../../../../../../style/variable.scss';
+
+
+.timeline-action-container {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 4% 5%;
+}
+
+.timeline-action-button {
+  width: 80px;
+}

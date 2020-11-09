@@ -1,0 +1,31 @@
+@import '../../../../../../../../style/variable.scss';
+
+.createMeetingCard{
+    display: flex;
+    flex-direction: column;
+
+    &__title{
+        color: $primary-color;
+        font-size: 16px;
+        padding: 10px 0px;
+        font-weight: bold;
+    }
+
+    &__content{
+        display: inline-block;
+        border-bottom: solid 1px rgba(0,0,0,0.1);
+    }
+    &__footer{
+        display: flex;
+        justify-content: flex-start;
+        margin-top:4%;
+
+        &__label{
+            flex:1;
+            font-size: 14px;
+            align-self: center;
+        }
+
+    }
+    
+}

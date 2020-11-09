@@ -1,0 +1,114 @@
+$primary-color: rgba(
+    $color: #33475b,
+    $alpha: 1,
+);
+$primary-color-light: #f5f8fa;
+$secondary-color: #0091ae;
+$tertiary-color: #ff5722;
+$label-color: #516f90;
+$border-color: #cbd6e2;
+
+$S: 425px;
+$M: 768px;
+$L: 1024px;
+$XL: 1440px;
+$maxL: 2560px;
+
+@mixin MQ($width) {
+    @if $width==S {
+        @media only screen and (max-width: $S) {
+            @content;
+        }
+    }
+    @if $width==M {
+        @media only screen and (max-width: $M) {
+            @content;
+        }
+    }
+    @if $width==L {
+        @media only screen and (max-width: $L) {
+            @content;
+        }
+    }
+    @if $width==XL {
+        @media only screen and (max-width: $XL) {
+            @content;
+        }
+    }
+    @if $width==maxL {
+        @media only screen and (max-width: $XL+1) {
+            @content;
+        }
+    }
+}
+
+.nakedBtn {
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.spanText{
+    font-size: 14px;
+    font-weight:400;
+    color:$primary-color;
+}
+
+.disabled {
+    cursor: not-allowed !important;
+    color: #b0c1d4;
+    background-color: #eaf0f6;
+}
+
+.underline {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    height: 1px;
+    width: 90%;
+
+    &--active {
+        display: block;
+    }
+}
+
+.border {
+    border: solid 1px rgb(203, 214, 226);
+}
+
+.blockline {
+    margin: {
+        top: 2%;
+        bottom: 1%;
+    }
+    padding: 3% 0;
+
+    border: {
+        top: solid 1px rgb(203, 214, 226);
+        bottom: solid 1px rgb(203, 214, 226);
+    }
+
+    &--top {
+        border: {
+            top: solid 1px rgb(203, 214, 226);
+            bottom: none;
+        }
+    }
+
+    &--bottom{
+        margin: 0 0;
+        padding: 2% 0;
+        border-top: none;
+        border-bottom: solid 1px rgb(203, 214, 226);
+    }
+}
+
+.cardLabel {
+    flex-grow: 1;
+    font-size: small;
+    color: $label-color;
+    margin-bottom: 10px;
+}
+
+

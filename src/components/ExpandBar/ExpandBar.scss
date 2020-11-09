@@ -1,0 +1,123 @@
+@import '../../style/variable.scss';
+
+.expandBar {
+    display: flex;
+    padding-top: 5%;
+    position: relative;
+    border-bottom: 1px solid rgb(203, 214, 226);
+
+    &__container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+        &__content {
+            width: 90%;
+            margin-bottom: 5%;
+            display: flex;
+            justify-content: flex-start;
+            align-self: center;
+            max-height: 0px;
+            opacity: 0;
+            font-size: 14px;
+            transition: all 1s ease-out;
+
+
+            &__active {
+                max-height: 100%;
+                opacity: 1;
+                transition: all 1s ease-in;
+                transform-origin: 100% 0;
+            }
+        }
+
+        &__labelBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+            cursor: pointer;
+
+            margin: {
+                left: 5%;
+            }
+
+            &__icon {
+                font-size:16px;
+            }
+
+            &__text {
+                flex-grow: 1;
+                font-size: 14px;
+                font-weight: 600;
+
+                span {
+                    color: $primary-color;
+
+                    &:hover {
+                        color: $secondary-color;
+                    }
+                }
+            }
+        }
+
+        &__right {
+
+            &__hint {
+                position: absolute;
+                right: 60px;
+                top: 5px;
+                padding-right: 10px;
+                height: 50px;
+                width: 200px;
+            }
+
+            &__addBtn {
+                @extend.nakedBtn;
+                font-weight: 600;
+                font-size: 14px;
+                color: $secondary-color;
+
+                &:hover {
+                    border-bottom: solid 1px $secondary-color;
+                }
+
+                &--disable {
+                    @extend.disabled;
+                    color: #b0c1d4;
+                    background-color: transparent;
+
+                    &:hover {
+                        border-bottom: none;
+                        .hintBox {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        background-color: red;
+        width: 90%;
+        max-height: 0px;
+        overflow: auto;
+        font-size: 14px;
+        transition: max-height .7s ease-out;
+
+
+        &__active {
+            max-height: 100px;
+            transition: max-height .7s ease-in;
+            transform-origin: 100% 0;
+        }
+    }
+}
+

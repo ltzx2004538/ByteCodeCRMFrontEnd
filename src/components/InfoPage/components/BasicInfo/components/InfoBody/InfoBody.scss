@@ -1,0 +1,35 @@
+@import '../../../../../../style/variable.scss';
+
+.infoBody{
+    display:flex;
+    flex:3;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:5% auto;
+
+    &__contactsAvatar{
+
+        &--init{
+            font-size:30px;
+            height:72px;
+            width:72px;
+        }
+    }
+
+    &__name{
+        font-size: 24px;
+        margin:3%;
+        color: $primary-color;
+        text-align: center;
+    }
+
+    &__jobTitle{
+        font-size: 14px;
+        margin:1%;
+        color: $primary-color;
+        text-align: center;
+    }
+
+}

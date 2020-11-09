@@ -1,0 +1,40 @@
+@import "../../../../../../style/variable.scss";
+
+.logMeeting__main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 40px;
+    padding: 0px 10px 10px 10px;
+   
+    &__container {
+        display: flex;
+        flex-direction: column;
+        height:100%;
+        margin-top: 3%;
+
+        &+&{
+            margin-left: 5%;
+        }
+
+        &__text {
+            display: flex;
+            min-width: 70px;
+            font-size: 14px;
+            flex-grow:1;
+        }
+
+        &__picker {
+            cursor: pointer; 
+        }
+    }
+
+    &__block{
+        margin: 0px 2%;
+    }
+
+
+}
