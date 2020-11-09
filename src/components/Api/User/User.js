@@ -15,7 +15,7 @@ async function GetAllUsers() {
 }
 
 async function RegisterUser(body){
-  const response = await api.post(`/api/user`,body);
+  const response = await api.post(`/api/users`,body);
   return response;
 }
 

@@ -3,14 +3,17 @@ import { Link, withRouter } from 'react-router-dom';
 import { RegisterUser } from '../../../Api/User';
 import GoogleIcon from '../../../../img/logsys/googleIcon.svg';
 
-
 class RegisterForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       newUser: {
- firstname: '', lastname: '', email: '', password: '',
-},
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+      },
+      error: null,
       firstnameErrMsg: '',
       lastnameErrMsg: '',
       emailErrMsg: '',
@@ -29,7 +32,7 @@ class RegisterForm extends React.Component {
       (prevState) => ({
         newUser: {
           ...prevState.newUser,
-          firstname: value,
+          firstName: value,
         },
       }),
       () => console.log(this.state.newUser),
@@ -42,7 +45,7 @@ class RegisterForm extends React.Component {
       (prevState) => ({
         newUser: {
           ...prevState.newUser,
-          lastname: value,
+          lastName: value,
         },
       }),
       () => console.log(this.state.newUser),
@@ -137,30 +140,21 @@ class RegisterForm extends React.Component {
         passwordErrMsg: '',
       });
     }
-    const body = {
-      firstName: this.state.newUser.firstname,
-      lastName: this.state.newUser.lastname,
-      email: this.state.newUser.email,
-      password: this.state.newUser.password,
-    }
+    const body = this.state.newUser;
     const response = RegisterUser(body);
-    // axios
-    //   .post('http://localhost:3000/api/users', {
-       
-    //   })
-    //   .then((res) => {
-    //     console.log(res);
-    //     if (res.status === 200) {
-    //       this.props.history.push('/login');
-    //     }
-    //   })
-    //   .catch((error) => {
-    //    alert(error);
-    //   });
+    response.then(response=>{
+      if (response.status === 200){
+        this.props.history.push('/login'); 
+      }
+    }).catch((error) =>{
+      const errorMsg = error.response.data;
+      this.setState({
+        error: errorMsg,
+      })
+    });
   };
 
   render() {
-    const { onSignUp } = this.state.newUser;
     return (
       <div className="reg-formContainer">
         <form className="regForm" action="" onSubmit={this.handleSubmit}>
@@ -245,7 +239,7 @@ class RegisterForm extends React.Component {
           />
           <span className="reg-errMsg">{this.state.passwordErrMsg}</span>
           <br />
-          <button className="reg-submitBtn" onClick={onSignUp}>
+          <button className="reg-submitBtn" onClick={this.handleSubmit}>
             Sign Up
           </button>
         </form>
