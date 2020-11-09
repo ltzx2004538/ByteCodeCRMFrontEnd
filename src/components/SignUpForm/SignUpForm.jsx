@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { RegisterUser } from '../../../Api/User';
-import GoogleIcon from '../../../../img/logsys/googleIcon.svg';
+import { RegisterUser } from '../Api/User';
+// import GoogleIcon from '../../../../img/logsys/googleIcon.svg';
 
 class RegisterForm extends React.Component {
   constructor(props) {
@@ -166,10 +166,10 @@ class RegisterForm extends React.Component {
           </p>
           <h3>Create your free account</h3>
           <span className="slogan">Free forever. No credit card needed</span>
-          <div className="googleSignUpWrapper">
+          {/* <div className="googleSignUpWrapper">
             <img className="googleIcon" src={GoogleIcon} alt="" />
             <button className="googleSignUpBtn">Sign up with google</button>
-          </div>
+          </div> */}
           <hr />
           <label className="reg-inputLabel" htmlFor="firstname">
             First Name

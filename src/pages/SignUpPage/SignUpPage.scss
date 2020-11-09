@@ -1,0 +1,85 @@
+.signUpPage {
+
+
+
+    &__wrapper {
+        display: flex;
+
+        &__sideBar {
+            display: none;
+            background-image: linear-gradient(to top, rgb(0, 164, 189), rgb(0, 189, 165));
+            padding: 85px 50px 50px 50px;
+            height: auto;
+            flex: 1 1 0%;
+            flex-flow: column nowrap;
+
+            &__top {
+                display: flex;
+                justify-content: center;
+
+                .top__logo {
+                    font-size: 30px;
+                    font-weight: 800;
+                    color: #ffff;
+                }
+            }
+
+            &__content {
+                
+                display: flex;
+                flex-direction: column;
+                flex-flow: column nowrap;
+                max-width: 350px;
+                color: white;
+                margin: auto;
+                align-items: center;
+
+                .text {
+                    font-size: 22px;
+                    color: #ffff;
+                    line-height: 1.5em;
+                    text-align: center;
+                    font-weight: 400;
+
+                    &--strong {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        &__form {}
+    }
+}
+
+.step-colomn__sideBar {
+    position: relative;
+    display: flex;
+    order: 1;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media screen and (min-width: 545px) {
+    .signUpPage__wrapper__form {
+        flex: 0 0 75%;
+    }
+
+    .signUpPage__wrapper__sideBar {
+        min-height: 100vh;
+        display: flex;
+        flex: 0 0 25%;
+    }
+}
+
+@media screen and (max-width: 544px) {
+    .signUpPage__wrapper__form {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .signUpPage__wrapper__sideBar {
+        max-width: 0px;
+    }
+}

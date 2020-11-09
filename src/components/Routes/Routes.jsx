@@ -6,7 +6,7 @@ import ContactList from '../../pages/ContactList';
 import ContactMain from '../Contact/ContactMain';
 import CompanyList from '../../pages/CompanyList';
 import CompanyMain from '../Company/CompanyMain';
-import RegForm from '../User/RegForm/Register';
+import SignUpPage from '../../pages/SignUpPage';
 import Login from '../User/LogIn/LogIn';
 import About from '../AboutUs';
 import Contactus from '../ContactUs/ContactUs';
@@ -16,7 +16,7 @@ import {
   COMPANY_BASE_URL,
   CONTACT_BASE_URL,
   LOGIN_URL,
-  REG_BASE_URL,
+  SIGN_UP,
   ABOUTUS_BASE_URL,
   CONTACTUS_BASE_URL,
 } from './URLMap';
@@ -26,7 +26,7 @@ const Routes = () => (
     <Switch>
       <Redirect exact from="/" to={CONTACT_BASE_URL} />
       <Route exact path={LOGIN_URL} component={Login} />
-      <Route exact path={REG_BASE_URL} component={RegForm} />
+      <Route exact path={SIGN_UP} component={SignUpPage} />
       <ProtectedRoute exact path={CONTACT_BASE_URL} component={ContactList} />
       <ProtectedRoute exact path={`${CONTACT_BASE_URL}/:id`} component={ContactMain} />
       <ProtectedRoute exact path={COMPANY_BASE_URL} component={CompanyList} />
