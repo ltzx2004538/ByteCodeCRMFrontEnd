@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { RegisterUser } from '../Api/User';
-// import GoogleIcon from '../../../../img/logsys/googleIcon.svg';
+import './SignUpForm.scss';
+import GoogleIcon from '../../img/logsys/googleIcon.svg';
 
 class RegisterForm extends React.Component {
   constructor(props) {
@@ -142,11 +143,11 @@ class RegisterForm extends React.Component {
     }
     const body = this.state.newUser;
     const response = RegisterUser(body);
-    response.then(response=>{
-      if (response.status === 200){
-        this.props.history.push('/login'); 
+    response.then(response => {
+      if (response.status === 200) {
+        this.props.history.push('/login');
       }
-    }).catch((error) =>{
+    }).catch((error) => {
       const errorMsg = error.response.data;
       this.setState({
         error: errorMsg,
@@ -156,21 +157,33 @@ class RegisterForm extends React.Component {
 
   render() {
     return (
-      <div className="reg-formContainer">
-        <form className="regForm" action="" onSubmit={this.handleSubmit}>
-          <p className="asking">
-            Have an account?&nbsp;
-            <Link className="reg-signInLink" to="/login">
-              Sign in
+      <div className="signUpForm">
+        <div className="signUpForm__wrapper">
+          <div className="signUpForm__wrapper__header">
+            <p className="signUpFormHeader__label">
+              Have an account?&nbsp;
+            <Link className="signUpFormHeader__link" to="/login">
+                Sign in
             </Link>
-          </p>
-          <h3>Create your free account</h3>
-          <span className="slogan">Free forever. No credit card needed</span>
-          {/* <div className="googleSignUpWrapper">
-            <img className="googleIcon" src={GoogleIcon} alt="" />
-            <button className="googleSignUpBtn">Sign up with google</button>
-          </div> */}
-          <hr />
+            </p>
+          </div>
+          <div className="signUpForm__wrapper__body">
+            <div className="signUpFormBody__layoutHeader">
+              <h1>Create your free account</h1>
+              <p> Free forever. No credit card needed </p>
+            </div>
+            <div className="signUpFormBody__googleBar">
+              <button className="googleBtn">
+                <div className="googleBtn__iconContainer">
+                  <img className="googleBtn__iconContainer__icon" src={GoogleIcon} alt="" />
+                </div>
+                <div className="googleBtn__text">
+                  Sign up with google
+                </div>
+              </button>
+            </div>
+          </div>
+
           <label className="reg-inputLabel" htmlFor="firstname">
             First Name
           </label>
@@ -242,7 +255,8 @@ class RegisterForm extends React.Component {
           <button className="reg-submitBtn" onClick={this.handleSubmit}>
             Sign Up
           </button>
-        </form>
+
+        </div>
       </div>
     );
   }
