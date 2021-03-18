@@ -5,7 +5,7 @@ const ToSignUpPage = () => (
   <div>
     <p className="signUpPara">
       Don't have an account? &nbsp;
-      <Link className="linkBtn" to="/register">
+      <Link className="linkBtn" to="/signUp">
         Sign up
       </Link>
     </p>

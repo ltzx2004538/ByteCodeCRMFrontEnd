@@ -7,7 +7,7 @@ import ContactMain from '../Contact/ContactMain';
 import CompanyList from '../../pages/CompanyList';
 import CompanyMain from '../Company/CompanyMain';
 import SignUpPage from '../../pages/SignUpPage';
-import Login from '../User/LogIn/LogIn';
+import Login from '../../pages/LoginPage';
 import About from '../AboutUs';
 import Contactus from '../ContactUs/ContactUs';
 import history from './components/History';

@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import CRMLogo from './components/CRMLogo';
 import LoginForm from './components/LoginForm';
 import ToSignUpPage from './components/ToSignUpPage';
-import './Style/style.scss';
+import './LoginPage.scss';
 
 const LogIn = () => (
   <div>
@@ -13,10 +13,6 @@ const LogIn = () => (
         <ToSignUpPage />
         <LoginForm />
       </Route>
-
-      {/* <Route path="/call">
-            <Calls />
-          </Route> */}
     </Switch>
   </div>
 );

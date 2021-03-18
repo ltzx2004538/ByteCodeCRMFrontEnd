@@ -1,8 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import api from '../../../../lib/api/api';
-import store from '../../../../store';
-import { addUser } from '../../../../action';
+import api from '../../../lib/api';
+import store from '../../../store';
+import { addUser } from '../../../action';
 
 class LoginForm extends React.Component {
   constructor() {

@@ -184,78 +184,83 @@ class RegisterForm extends React.Component {
             </div>
           </div>
 
-          <label className="reg-inputLabel" htmlFor="firstname">
-            First Name
-          </label>
-          <br />
-          <input
-            className="reg-firstNameInput"
-            type="text"
-            onChange={this.handleOnFirstnameChange}
-            id="firstname"
-            name="firstname"
-            value={this.state.newUser.firstname}
-          />
-          <span className="reg-errMsg">
-            {' '}
-            {this.state.firstnameErrMsg}
-            {' '}
-          </span>
-          <br />
-          <label className="reg-inputLabel" htmlFor="lastname">
-            Last Name
-          </label>
-          <br />
-          <input
-            className="reg-lastNameInput"
-            type="text"
-            onChange={this.handleOnLastnameChange}
-            id="lastname"
-            name="lastname"
-            value={this.state.newUser.lastname}
-          />
-          <span className="reg-errMsg">
-            {' '}
-            {this.state.lastnameErrMsg}
-            {' '}
-          </span>
-          <br />
-          <label className="reg-inputLabel" htmlFor="email">
-            Email address
-          </label>
-          <br />
-          <input
-            className="reg-emailInput"
-            type="text"
-            onChange={this.handleOnEmailChange}
-            id="email"
-            name="email"
-            value={this.state.newUser.email}
-          />
-          <span className="reg-errMsg">
-            {' '}
-            {this.state.emailErrMsg}
-            {' '}
-          </span>
-          <br />
-          <label className="reg-inputLabel" htmlFor="password">
-            Password
-          </label>
-          <br />
-          <input
-            className="reg-pwdInput"
-            type="password"
-            onChange={this.handleOnPasswordChange}
-            id="password"
-            name="password"
-            value={this.state.newUser.password}
-          />
-          <span className="reg-errMsg">{this.state.passwordErrMsg}</span>
-          <br />
-          <button className="reg-submitBtn" onClick={this.handleSubmit}>
-            Sign Up
-          </button>
+          <div className="signUpForm__wrapper__separator">
+            <span className="signUpForm__wrapper__separator__label">Or</span>
+          </div>
 
+          <div className="">
+            <label className="reg-inputLabel" htmlFor="firstname">
+              First Name
+              </label>
+            <br />
+            <input
+              className="reg-firstNameInput"
+              type="text"
+              onChange={this.handleOnFirstnameChange}
+              id="firstname"
+              name="firstname"
+              value={this.state.newUser.firstname}
+            />
+            <span className="reg-errMsg">
+              {' '}
+              {this.state.firstnameErrMsg}
+              {' '}
+            </span>
+            <br />
+            <label className="reg-inputLabel" htmlFor="lastname">
+              Last Name
+          </label>
+            <br />
+            <input
+              className="reg-lastNameInput"
+              type="text"
+              onChange={this.handleOnLastnameChange}
+              id="lastname"
+              name="lastname"
+              value={this.state.newUser.lastname}
+            />
+            <span className="reg-errMsg">
+              {' '}
+              {this.state.lastnameErrMsg}
+              {' '}
+            </span>
+            <br />
+            <label className="reg-inputLabel" htmlFor="email">
+              Email address
+          </label>
+            <br />
+            <input
+              className="reg-emailInput"
+              type="text"
+              onChange={this.handleOnEmailChange}
+              id="email"
+              name="email"
+              value={this.state.newUser.email}
+            />
+            <span className="reg-errMsg">
+              {' '}
+              {this.state.emailErrMsg}
+              {' '}
+            </span>
+            <br />
+            <label className="reg-inputLabel" htmlFor="password">
+              Password
+          </label>
+            <br />
+            <input
+              className="reg-pwdInput"
+              type="password"
+              onChange={this.handleOnPasswordChange}
+              id="password"
+              name="password"
+              value={this.state.newUser.password}
+            />
+            <span className="reg-errMsg">{this.state.passwordErrMsg}</span>
+            <br />
+            <button className="reg-submitBtn" onClick={this.handleSubmit}>
+              Sign Up
+          </button>
+          </div>
         </div>
       </div>
     );
