@@ -159,107 +159,59 @@ class RegisterForm extends React.Component {
     return (
       <div className="signUpForm">
         <div className="signUpForm__wrapper">
-          <div className="signUpForm__wrapper__header">
-            <p className="signUpFormHeader__label">
-              Have an account?&nbsp;
-            <Link className="signUpFormHeader__link" to="/login">
-                Sign in
-            </Link>
-            </p>
-          </div>
-          <div className="signUpForm__wrapper__body">
-            <div className="signUpFormBody__layoutHeader">
-              <h1>Create your free account</h1>
-              <p> Free forever. No credit card needed </p>
+          <div className="signUpForm__wrapper__top">
+            <div className="signUpFormTop__header">
+              <p className="signUpFormTop__header__label">
+                Have an account?&nbsp;
+              <Link className="signUpFormTop__header__link" to="/login">
+                  Sign in
+              </Link>
+              </p>
             </div>
-            <div className="signUpFormBody__googleBar">
-              <button className="googleBtn">
-                <div className="googleBtn__iconContainer">
-                  <img className="googleBtn__iconContainer__icon" src={GoogleIcon} alt="" />
+            <div className="signUpFormTop__body">
+              <div className="signUpFormTop__body__layoutHeader">
+                <h1>Create your free account</h1>
+                <p> Free forever. No credit card needed </p>
+              </div>
+              <div className="signUpFormTop__body__googleBar">
+                <button className="googleBtn">
+                  <div className="googleBtn__iconContainer">
+                    <img className="googleBtn__iconContainer__icon" src={GoogleIcon} alt="" />
+                  </div>
+                  <div className="googleBtn__text">
+                    Sign up with google
                 </div>
-                <div className="googleBtn__text">
-                  Sign up with google
-                </div>
-              </button>
+                </button>
+              </div>
             </div>
           </div>
 
           <div className="signUpForm__wrapper__separator">
-            <span className="signUpForm__wrapper__separator__label">Or</span>
+            <div className="signUpFormSeparator">
+              <span className="signUpFormSeparator__label">Or</span>
+            </div>
           </div>
 
-          <div className="">
-            <label className="reg-inputLabel" htmlFor="firstname">
-              First Name
-              </label>
-            <br />
+          <div className="signUpForm__wrapper__mid">
             <input
-              className="reg-firstNameInput"
+              className="signUpFormMid__name"
+              placeholder="First Name"
               type="text"
               onChange={this.handleOnFirstnameChange}
               id="firstname"
               name="firstname"
               value={this.state.newUser.firstname}
             />
-            <span className="reg-errMsg">
-              {' '}
-              {this.state.firstnameErrMsg}
-              {' '}
-            </span>
-            <br />
-            <label className="reg-inputLabel" htmlFor="lastname">
-              Last Name
-          </label>
-            <br />
+
             <input
-              className="reg-lastNameInput"
+              className="signUpFormMid__name"
+              placeholder="Last Name"
               type="text"
-              onChange={this.handleOnLastnameChange}
-              id="lastname"
-              name="lastname"
-              value={this.state.newUser.lastname}
+              onChange={this.handleOnFirstnameChange}
+              id="lastName"
+              name="lastName"
+              value={this.state.newUser.firstname}
             />
-            <span className="reg-errMsg">
-              {' '}
-              {this.state.lastnameErrMsg}
-              {' '}
-            </span>
-            <br />
-            <label className="reg-inputLabel" htmlFor="email">
-              Email address
-          </label>
-            <br />
-            <input
-              className="reg-emailInput"
-              type="text"
-              onChange={this.handleOnEmailChange}
-              id="email"
-              name="email"
-              value={this.state.newUser.email}
-            />
-            <span className="reg-errMsg">
-              {' '}
-              {this.state.emailErrMsg}
-              {' '}
-            </span>
-            <br />
-            <label className="reg-inputLabel" htmlFor="password">
-              Password
-          </label>
-            <br />
-            <input
-              className="reg-pwdInput"
-              type="password"
-              onChange={this.handleOnPasswordChange}
-              id="password"
-              name="password"
-              value={this.state.newUser.password}
-            />
-            <span className="reg-errMsg">{this.state.passwordErrMsg}</span>
-            <br />
-            <button className="reg-submitBtn" onClick={this.handleSubmit}>
-              Sign Up
-          </button>
           </div>
         </div>
       </div>
