@@ -1,8 +1,9 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { RegisterUser } from '../Api/User';
-import './SignUpForm.scss';
+import SignUpFormInput from './components/SignUpFormInput/';
 import GoogleIcon from '../../img/logsys/googleIcon.svg';
+import './SignUpForm.scss';
 
 class RegisterForm extends React.Component {
   constructor(props) {
@@ -175,12 +176,14 @@ class RegisterForm extends React.Component {
               </div>
               <div className="signUpFormTop__body__googleBar">
                 <button className="googleBtn">
-                  <div className="googleBtn__iconContainer">
-                    <img className="googleBtn__iconContainer__icon" src={GoogleIcon} alt="" />
+                  <div className="googleBtn__left">
+                    <img className="googleBtn__left__icon" src={GoogleIcon} alt="" />
                   </div>
-                  <div className="googleBtn__text">
-                    Sign up with google
-                </div>
+                  <div className="googleBtn__right">
+                    <span className="googleBtn__right__text">
+                      Sign up with google
+                    </span>
+                  </div>
                 </button>
               </div>
             </div>
@@ -192,27 +195,8 @@ class RegisterForm extends React.Component {
             </div>
           </div>
 
-          <div className="signUpForm__wrapper__mid">
-            <input
-              className="signUpFormMid__name"
-              placeholder="First Name"
-              type="text"
-              onChange={this.handleOnFirstnameChange}
-              id="firstname"
-              name="firstname"
-              value={this.state.newUser.firstname}
-            />
+          <SignUpFormInput/>
 
-            <input
-              className="signUpFormMid__name"
-              placeholder="Last Name"
-              type="text"
-              onChange={this.handleOnFirstnameChange}
-              id="lastName"
-              name="lastName"
-              value={this.state.newUser.firstname}
-            />
-          </div>
         </div>
       </div>
     );

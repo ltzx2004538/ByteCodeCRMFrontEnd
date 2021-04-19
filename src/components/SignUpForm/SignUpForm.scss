@@ -70,7 +70,11 @@
                             background-color: rgb(66, 133, 244);
                             border: 1px solid rgb(66, 133, 244);
 
-                            &__iconContainer {
+                            &:hover{
+                                cursor: pointer;
+                            }
+
+                            &__left {
                                 display: flex;
                                 justify-content: center;
                                 align-items: center;
@@ -83,12 +87,15 @@
                                     width: 18px;
                                 }
                             }
-
-                            &__text {
+                            &__right{
                                 display: flex;
                                 justify-content: center;
-                                font-size: 14;
-                                font-weight: 500;
+                                flex-grow:1;
+                                
+                                &__text {
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                }
                             }
                         }
                     }
@@ -96,8 +103,7 @@
             }
         }
 
-        &__separator {
-          
+        &__separator { 
             display: flex;
             justify-content: center;
           
@@ -126,6 +132,22 @@
                     color: $text-color-grey;
                 }
             }
+        }
+
+        &__mid{
+            display: flex;
+            justify-content: center;
+
+           .signUpFormMid{
+               &__name{
+                   border:none;
+                   border-bottom: solid 1px $border-green;
+
+                   & + &{
+                       margin-left: 12px;
+                   }
+               }
+           } 
         }
     }
 }
