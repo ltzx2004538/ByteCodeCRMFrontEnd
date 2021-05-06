@@ -1,0 +1,111 @@
+@import '../../../../style/variable.scss';
+
+.signUpFormInput {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    &__form {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+
+        &__top {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+
+            &__name {
+                width: 209px;
+                border: none;
+                outline: none;
+                padding-bottom: 19px;
+                font-size: 22px;
+                border-bottom: solid 1px $border-green;
+
+                &+& {
+                    margin-left: 26px;
+                }
+            }
+        }
+
+        &__bottom {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+
+            &__email {
+                width: 100%;
+                margin-top: 32px;
+                padding-bottom: 19px;
+                font-size: 22px;
+                border: none;
+                outline: none;
+                border-bottom: solid 1px $border-green;
+            }
+        }
+    }
+
+    &__submitBtn {
+        @extend .nakedBtn;
+        background-color: $primary-btn-orange;
+        width: 100%;
+        height: 50px;
+        margin-top: 32px;
+        border-radius: 3px;
+
+        &__label {
+            font-size: 16px;
+            white-space: normal;
+            color: #ffffff;
+        }
+    }
+
+    &__footer{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        font-size: 16px;
+
+        span{
+            color: $primary-text-grey;
+        }
+
+        a{
+            color: $primary-text-green;
+        }
+    }
+}
+
+@media screen and (max-width: 428px) {
+    .signUpFormInput{
+        padding: 0px;
+
+        &__form{
+            &__top{
+                flex-wrap: wrap;
+                justify-content: flex-start;
+    
+                &__name{
+                    width: 100%;  
+    
+                    &+&{
+                        margin-left: 0px;
+                        margin-top: 24px;
+                    }
+                }
+            }
+        }
+
+        &__footer{
+            font-size: 12px;
+        }
+    }
+}

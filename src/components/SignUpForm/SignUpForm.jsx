@@ -9,12 +9,10 @@ class RegisterForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      newUser: {
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-      },
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
       error: null,
       firstnameErrMsg: '',
       lastnameErrMsg: '',
@@ -28,31 +26,32 @@ class RegisterForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleOnFirstnameChange(e) {
-    const { value } = e.target;
+
+
+  handleOnFirstnameChange(firstName) {
+    const value = firstName;
     this.setState(
-      (prevState) => ({
-        newUser: {
-          ...prevState.newUser,
-          firstName: value,
-        },
+      prevState => ({
+        ...prevState.firstName,
+        firstName: firstName
       }),
-      () => console.log(this.state.newUser),
+      () => console.log(this.state.firstName)
     );
   }
 
-  handleOnLastnameChange(e) {
-    const { value } = e.target;
+
+  handleOnLastnameChange(lastName) {
+    const value = lastName;
     this.setState(
-      (prevState) => ({
-        newUser: {
-          ...prevState.newUser,
-          lastName: value,
-        },
+      prevState => ({
+        ...prevState.lastName,
+        lastName: lastName
       }),
-      () => console.log(this.state.newUser),
+      () => console.log(this.state.lastName)
     );
   }
+
+
 
   handleOnEmailChange(e) {
     const { value } = e.target;
@@ -157,46 +156,50 @@ class RegisterForm extends React.Component {
   };
 
   render() {
+    const { firstName, lastName, email } = this.props;
     return (
       <div className="signUpForm">
         <div className="signUpForm__wrapper">
-          <div className="signUpForm__wrapper__top">
-            <div className="signUpFormTop__header">
-              <p className="signUpFormTop__header__label">
-                Have an account?&nbsp;
-              <Link className="signUpFormTop__header__link" to="/login">
-                  Sign in
+          <div className="signUpForm__wrapper__header">
+            <p className="signUpFormHeader__label">
+              Have an account?&nbsp;
+              <Link className="signUpFormHeader__link" to="/login">
+                Sign in
               </Link>
-              </p>
+            </p>
+          </div>
+          <div className="signUpForm__wrapper__body">
+            <div className="signUpFormBody__layoutHeader">
+              <h1>Create your free account</h1>
+              <p> Free forever. No credit card needed </p>
             </div>
-            <div className="signUpFormTop__body">
-              <div className="signUpFormTop__body__layoutHeader">
-                <h1>Create your free account</h1>
-                <p> Free forever. No credit card needed </p>
-              </div>
-              <div className="signUpFormTop__body__googleBar">
-                <button className="googleBtn">
-                  <div className="googleBtn__left">
-                    <img className="googleBtn__left__icon" src={GoogleIcon} alt="" />
-                  </div>
-                  <div className="googleBtn__right">
-                    <span className="googleBtn__right__text">
-                      Sign up with google
+            <div className="signUpFormBody__googleBar">
+              <button className="googleBtn">
+                <div className="googleBtn__left">
+                  <img className="googleBtn__left__icon" src={GoogleIcon} alt="" />
+                </div>
+                <div className="googleBtn__right">
+                  <span className="googleBtn__right__text">
+                    Sign up with google
                     </span>
-                  </div>
-                </button>
+                </div>
+              </button>
+            </div>
+            <div className="signUpFormBody__separator">
+              <div className="separator">
+                <span className="separator__label">Or</span>
               </div>
             </div>
-          </div>
 
-          <div className="signUpForm__wrapper__separator">
-            <div className="signUpFormSeparator">
-              <span className="signUpFormSeparator__label">Or</span>
+            <div className="signUpFormBody__input">
+              <SignUpFormInput
+                firstName={firstName}
+                lastName={lastName}
+                handleOnFirstnameChange={this.handleOnFirstnameChange}
+                handleOnLastnameChange={this.handleOnLastnameChange}
+              />
             </div>
           </div>
-
-          <SignUpFormInput/>
-
         </div>
       </div>
     );
